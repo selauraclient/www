@@ -1,0 +1,88 @@
+---
+import "../styles/global.css";
+interface Props {
+    title: string;
+    description?: string;
+    home?: boolean;
+    img?: string;
+    redirect?: string;
+}
+
+const { title, description, home, img, redirect } = Astro.props;
+---
+
+<script is:inline data-cfasync="false">
+    const theme = (() => {
+        if (
+            typeof localStorage !== "undefined" &&
+            localStorage.getItem("theme")
+        ) {
+            return localStorage.getItem("theme") ?? "light";
+        }
+        if (window.matchMedia("(prefers-color-scheme: dark)").matches) {
+            return "dark";
+        }
+        return "light";
+    })();
+
+    if (theme === "light") {
+        document.documentElement.setAttribute("data-theme", "light");
+    } else {
+        document.documentElement.setAttribute("data-theme", "dark");
+    }
+
+    window.localStorage.setItem("theme", theme);
+</script>
+
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        {
+            redirect ? (
+                <meta http-equiv="refresh" content={`0;url=${redirect}`} />
+            ) : null
+        }
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <meta
+            name="description"
+            content={description ??
+                "Selaura Client: Free, open-source utility client for Minecraft: Bedrock Edition"}
+        />
+        <title>{title ?? "Selaura Client"}</title>
+    </head>
+    <body></body>
+</html>
+
+<style is:global>
+    * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+    }
+
+    :root {
+        --selaura-light: #f2f1e3;
+        --selaura-dark: #222222;
+        --selaura-soft: rgba(0, 0, 0, 0.05);
+        --selaura-faint: rgba(0, 0, 0, 0.05);
+
+        &[data-theme="dark"] {
+            --selaura-light: #222222;
+            --selaura-dark: #f2f1e3;
+            --selaura-soft: rgba(255, 255, 255, 0.05);
+            --selaura-faint: rgba(255, 255, 255, 0.1);
+        }
+    }
+
+    html {
+        scroll-behavior: smooth;
+        background: var(--selaura-light);
+    }
+
+    body,
+    body > * {
+        font-optical-sizing: auto;
+        font-style: normal;
+        font-weight: 500;
+    }
+</style>
