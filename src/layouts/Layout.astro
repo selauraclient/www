@@ -9,6 +9,8 @@ interface Props {
 }
 
 const { title, description, home, img, redirect } = Astro.props;
+
+import Navbar from "../components/Navbar.astro";
 ---
 
 <script is:inline data-cfasync="false">
@@ -50,7 +52,9 @@ const { title, description, home, img, redirect } = Astro.props;
         />
         <title>{title ?? "Selaura Client"}</title>
     </head>
-    <body></body>
+    <body>
+        <Navbar />
+    </body>
 </html>
 
 <style is:global>
@@ -77,6 +81,7 @@ const { title, description, home, img, redirect } = Astro.props;
     html {
         scroll-behavior: smooth;
         background: var(--selaura-light);
+        color: var(--selaura-dark);
     }
 
     body,

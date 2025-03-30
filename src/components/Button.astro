@@ -1,0 +1,108 @@
+---
+import "../styles/global.css";
+interface Props {
+    text: string;
+    muted?: boolean;
+    outline?: boolean;
+}
+
+const { text, muted, outline } = Astro.props;
+---
+
+<div
+    class=`selaura-button ${muted ? "selaura-button-muted" : ""} ${outline ? "selaura-button-outline" : ""}`
+>
+    {text}
+</div>
+
+<style>
+    .selaura-button {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        padding: 10px 20px;
+        font-size: 14px;
+        font-weight: 500;
+        text-align: center;
+        cursor: pointer;
+        border-radius: 0.5em;
+        border: 2px solid var(--selaura-light);
+        background-color: var(--selaura-dark);
+        color: var(--selaura-light);
+        transition: all 0.3s ease;
+        user-select: none;
+        box-sizing: border-box;
+    }
+
+    .selaura-button:hover {
+        background-color: var(--selaura-dark);
+        color: var(--selaura-light);
+        border-color: var(--selaura-dark);
+        box-shadow: 0 4px 6px var(--selaura-soft);
+        transform: scale(0.98);
+    }
+
+    .selaura-button:active {
+        background-color: var(--selaura-dark);
+        color: var(--selaura-light);
+    }
+
+    .selaura-button:disabled {
+        background-color: var(--selaura-soft);
+        color: var(--selaura-faint);
+        border-color: var(--selaura-soft);
+        cursor: not-allowed;
+        box-shadow: none;
+    }
+
+    .selaura-button-outline {
+        background-color: transparent;
+        border: 2px solid var(--selaura-dark);
+        color: var(--selaura-dark);
+    }
+
+    .selaura-button-outline:hover {
+        background-color: var(--selaura-dark);
+        color: var(--selaura-light);
+        transform: scale(0.98);
+    }
+
+    .selaura-button-outline:active {
+        background-color: var(--selaura-dark);
+        color: var(--selaura-light);
+    }
+
+    .selaura-button-outline:disabled {
+        background-color: transparent;
+        color: var(--selaura-faint);
+        border-color: var(--selaura-soft);
+    }
+
+    .selaura-button-muted {
+        background-color: var(--selaura-faint);
+        color: var(--selaura-dark);
+        border-color: var(--selaura-soft);
+    }
+
+    .selaura-button-muted:hover {
+        background-color: var(--selaura-faint);
+        color: var(--selaura-dark);
+        border-color: var(--selaura-soft);
+        transform: scale(0.98);
+        box-shadow: none;
+    }
+
+    .selaura-button-muted:active {
+        background-color: var(--selaura-faint);
+        color: var(--selaura-dark);
+        border-color: var(--selaura-soft);
+    }
+
+    .selaura-button-muted:disabled {
+        background-color: var(--selaura-faint);
+        color: var(--selaura-dark);
+        border-color: var(--selaura-soft);
+        cursor: not-allowed;
+        box-shadow: none;
+    }
+</style>
