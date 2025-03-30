@@ -1,29 +1,48 @@
 ---
 import "../styles/global.css";
+
 interface Props {
     text: string;
+    href?: string;
+    target?: string;
     muted?: boolean;
     outline?: boolean;
     disabled?: boolean;
-    onClick?: () => void;
     icon?: string;
     iconPosition?: "left" | "right";
 }
 
-const { text, muted, outline, disabled, onClick, icon, iconPosition } = Astro.props;
+const props = Astro.props;
 ---
 
-<div
-    class=`selaura-button ${muted ? "selaura-button-muted" : ""} ${outline ? "selaura-button-outline" : ""}`
->
-    {icon && iconPosition === "left" && (
-        <i class={`fa-solid fa-${icon}`}></i>
-    )}
-    {text}
-    {icon && iconPosition === "right" && (
-        <i class={`fa-solid fa-${icon}`}></i>
-    )}
-</div>
+{props.href ? (
+    <a
+        href={props.href}
+        target={props.target}
+        class={`selaura-button ${props.muted ? "selaura-button-muted" : ""} ${props.outline ? "selaura-button-outline" : ""}`}
+    >
+        {props.icon && props.iconPosition === "left" && (
+            <i class={`fa-solid fa-${props.icon}`}></i>
+        )}
+        {props.text}
+        {props.icon && props.iconPosition === "right" && (
+            <i class={`fa-solid fa-${props.icon}`}></i>
+        )}
+    </a>
+) : (
+    <button
+        class={`selaura-button ${props.muted ? "selaura-button-muted" : ""} ${props.outline ? "selaura-button-outline" : ""}`}
+        disabled={props.disabled}
+    >
+        {props.icon && props.iconPosition === "left" && (
+            <i class={`fa-solid fa-${props.icon}`}></i>
+        )}
+        {props.text}
+        {props.icon && props.iconPosition === "right" && (
+            <i class={`fa-solid fa-${props.icon}`}></i>
+        )}
+    </button>
+)}
 
 <style>
     .selaura-button {
@@ -43,6 +62,7 @@ const { text, muted, outline, disabled, onClick, icon, iconPosition } = Astro.pr
         transition: all 0.3s ease;
         user-select: none;
         box-sizing: border-box;
+        text-decoration: none;
     }
 
     .selaura-button:hover {
