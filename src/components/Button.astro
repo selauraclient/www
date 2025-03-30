@@ -4,15 +4,25 @@ interface Props {
     text: string;
     muted?: boolean;
     outline?: boolean;
+    disabled?: boolean;
+    onClick?: () => void;
+    icon?: string;
+    iconPosition?: "left" | "right";
 }
 
-const { text, muted, outline } = Astro.props;
+const { text, muted, outline, disabled, onClick, icon, iconPosition } = Astro.props;
 ---
 
 <div
     class=`selaura-button ${muted ? "selaura-button-muted" : ""} ${outline ? "selaura-button-outline" : ""}`
 >
+    {icon && iconPosition === "left" && (
+        <i class={`fa-solid fa-${icon}`}></i>
+    )}
     {text}
+    {icon && iconPosition === "right" && (
+        <i class={`fa-solid fa-${icon}`}></i>
+    )}
 </div>
 
 <style>
@@ -20,6 +30,7 @@ const { text, muted, outline } = Astro.props;
         display: inline-flex;
         align-items: center;
         justify-content: center;
+        gap: 0.5em;
         padding: 10px 20px;
         font-size: 14px;
         font-weight: 500;
@@ -53,6 +64,10 @@ const { text, muted, outline } = Astro.props;
         border-color: var(--selaura-soft);
         cursor: not-allowed;
         box-shadow: none;
+    }
+
+    .selaura-button i {
+        font-size: 1.2rem;
     }
 
     .selaura-button-outline {
