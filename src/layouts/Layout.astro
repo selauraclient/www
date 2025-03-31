@@ -75,12 +75,16 @@ import Footer from "../components/Footer.astro";
         --selaura-dark: #222222;
         --selaura-soft: rgba(0, 0, 0, 0.05);
         --selaura-faint: rgba(0, 0, 0, 0.05);
+        --selaura-scrollbar-bg: rgba(0, 0, 0, 0.1);
+        --selaura-scrollbar-thumb: rgba(0, 0, 0, 0.3);
 
         &[data-theme="dark"] {
             --selaura-light: #222222;
             --selaura-dark: #f2f1e3;
             --selaura-soft: rgba(255, 255, 255, 0.05);
             --selaura-faint: rgba(255, 255, 255, 0.1);
+            --selaura-scrollbar-bg: rgba(255, 255, 255, 0.1);
+            --selaura-scrollbar-thumb: rgba(255, 255, 255, 0.4);
         }
     }
 
@@ -90,6 +94,8 @@ import Footer from "../components/Footer.astro";
         color: var(--selaura-dark);
         width: 100%;
         height: 100vh;
+        scrollbar-color: var(--selaura-scrollbar-thumb)
+            var(--selaura-scrollbar-bg);
     }
 
     body,
