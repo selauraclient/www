@@ -3,14 +3,14 @@ import "../styles/global.css";
 interface Props {
     title: string;
     description?: string;
-    home?: boolean;
     img?: string;
     redirect?: string;
 }
 
-const { title, description, home, img, redirect } = Astro.props;
+const { title, description, img, redirect } = Astro.props;
 
 import Navbar from "../components/Navbar.astro";
+import Footer from "../components/Footer.astro";
 ---
 
 <script is:inline data-cfasync="false">
@@ -50,10 +50,14 @@ import Navbar from "../components/Navbar.astro";
             content={description ??
                 "Selaura Client: Free, open-source utility client for Minecraft: Bedrock Edition"}
         />
+        <link rel="icon" href={img} />
+        <link rel="apple-touch-icon" href={img} />
         <title>{title ?? "Selaura Client"}</title>
     </head>
     <body>
         <Navbar />
+        {Astro.slots.default()}
+        <Footer />
     </body>
 </html>
 
