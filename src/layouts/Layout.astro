@@ -54,9 +54,11 @@ import Footer from "../components/Footer.astro";
         <link rel="apple-touch-icon" href={img} />
         <title>{title ?? "Selaura Client"}</title>
     </head>
-    <body>
+    <body class="flex flex-col min-h-screen">
         <Navbar />
-        <!-- TODO: Content put here -->
+        <main class="flex-grow flex">
+            <!-- TODO: Content put here -->
+        </main>
         <Footer />
     </body>
 </html>
@@ -86,6 +88,8 @@ import Footer from "../components/Footer.astro";
         scroll-behavior: smooth;
         background: var(--selaura-light);
         color: var(--selaura-dark);
+        width: 100%;
+        height: 100vh;
     }
 
     body,
