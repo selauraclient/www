@@ -10,6 +10,7 @@ interface Props {
     disabled?: boolean;
     icon?: string;
     iconPosition?: "left" | "right";
+    footer?: boolean;
 }
 
 const props = Astro.props;
@@ -19,7 +20,7 @@ const props = Astro.props;
     props.href ? (
         <a href={props.href} target={props.target}>
             <button
-                class={`selaura-button ${props.muted ? "selaura-button-muted" : ""} ${props.outline ? "selaura-button-outline" : ""}`}
+                class={`selaura-button ${props.muted ? "selaura-button-muted" : ""} ${props.outline ? "selaura-button-outline" : ""} ${props.footer ? "selaura-footer-button" : ""}`}
             >
                 {props.icon && props.iconPosition === "left" && (
                     <i class={`fa-solid fa-${props.icon}`} />
@@ -32,7 +33,7 @@ const props = Astro.props;
         </a>
     ) : (
         <button
-            class={`selaura-button ${props.muted ? "selaura-button-muted" : ""} ${props.outline ? "selaura-button-outline" : ""}`}
+            class={`selaura-button ${props.muted ? "selaura-button-muted" : ""} ${props.outline ? "selaura-button-outline" : ""} ${props.footer ? "selaura-footer-button" : ""}`}
             disabled={props.disabled}
         >
             {props.icon && props.iconPosition === "left" && (
@@ -90,6 +91,32 @@ const props = Astro.props;
 
     .selaura-button i {
         font-size: 1.2rem;
+    }
+
+    .selaura-footer-button {
+        background-color: var(--selaura-light);
+        color: var(--selaura-dark);
+        border: none;
+    }
+
+    .selaura-footer-button:hover {
+        background-color: var(--selaura-light);
+        color: var(--selaura-dark);
+        border: none;
+    }
+
+    .selaura-footer-button:active {
+        background-color: var(--selaura-light);
+        color: var(--selaura-dark);
+        border: none;
+    }
+
+    .selaura-footer-button:disabled {
+        background-color: var(--selaura-light);
+        color: var(--selaura-faint);
+        border: none;
+        cursor: not-allowed;
+        box-shadow: none;
     }
 
     .selaura-button-outline {

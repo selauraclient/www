@@ -8,15 +8,29 @@ import Button from "./Button.astro";
         <p>Free, open-source utility client for Minecraft: Bedrock Edition</p>
     </section>
     <section>
-        <Button text="Download" icon="arrow-right" iconPosition="right" class:list={["selaura-footer-button"]} />
+        <Button text="Download" icon="arrow-right" iconPosition="right" footer />
     </section>
-    <section class="flex flex-col gap-2">
-        <h2 class="text-2xl font-bold">Links</h2>
-        <div class="flex flex-row gap-2">
-            <a href="https://github.com/selauraclient/" target="_blank">
-                <i class="fa-brands fa-github"></i>
-            </a>
-        </div>
+    <section class="flex flex-row justify-between w-lg">
+        <section class="flex flex-col gap-2">
+            <h2 class="text-2xl">Links</h2>
+            <div class="flex flex-row gap-4">
+                <a href="https://github.com/selauraclient/" target="_blank">
+                    <i class="fa-brands fa-github"></i>
+                </a>
+                <a href="https://discord.gg/37zCgBHGuS" target="_blank">
+                    <i class="fa-brands fa-discord"></i>
+                </a>
+                <a href="https://www.youtube.com/@selauraclient" target="_blank">
+                    <i class="fa-brands fa-youtube"></i>
+                </a>
+            </div>
+        </section>
+        <section class="flex flex-col gap-2">
+            <h2 class="text-2xl">About Us</h2>
+            <div class="flex flex-col gap-4">
+                
+            </div>
+        </section>
     </section>
     <section class="flex-col">
         <p class="flex text-bold">Made with ❤️ by the Selaura Client Team.</p>
@@ -30,18 +44,6 @@ import Button from "./Button.astro";
         position: relative;
         bottom: 0;
         padding: 6rem;
-    }
-
-    .selaura-footer-button {
-        background-color: var(--selaura-light);
-        color: var(--selaura-dark);
-        border: none;
-    }
-
-    .selaura-footer-button:hover {
-        background-color: var(--selaura-soft);
-        color: var(--selaura-dark);
-        border: none;
     }
 
     .footer-title {

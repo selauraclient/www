@@ -4,7 +4,23 @@ import ThemeSwitcher from "./ThemeSwitcher.astro";
 import Button from "./Button.astro";
 ---
 
-<div class="w-full bg-transparent px-6 py-3 flex flex-row items-center gap-4 justify-center">
+<div class="w-full bg-transparent selaura-navbar flex flex-row items-center gap-4 justify-center">
+    <div class="selaura-logo"></div>
+    <div class="flex flex-grow"></div>
     <Button text="Download" outline icon="arrow-right" iconPosition="right"/>
     <ThemeSwitcher />
 </div>
+
+<style>
+    .selaura-logo {
+        width: 8rem;
+        height: 2rem;
+        mask-image: url("../assets/logo-text.svg");
+        mask-size: contain;
+        mask-repeat: no-repeat;
+        background-color: var(--selaura-dark);
+    }
+    .selaura-navbar {
+        padding: 1rem 2rem;
+    }
+</style>
