@@ -1,9 +1,11 @@
+---
+import Button from "./Button.astro";
+---
+
 <div class="w-full h-full selaura-footer flex flex-col gap-12">
     <section class="flex flex-col gap-2">
-        <p class="footer-title">Selaura Client</h2>
-        <p>
-            Free, open-source utility client for Minecraft: Bedrock Edition
-        </p>
+        <p class="footer-title">Selaura Client</p>
+        <p>Free, open-source utility client for Minecraft: Bedrock Edition</p>
     </section>
     <section class="flex flex-col gap-2">
         <h2 class="text-2xl font-bold">Links</h2>
@@ -17,9 +19,10 @@
         </div>
     </section>
     <section class="flex-col">
-        <p class="flex text-bold">
-            Made with ❤️ by the Selaura Client Team.
-        </p>
+        <p class="flex text-bold">Made with ❤️ by the Selaura Client Team.</p>
+    </section>
+    <section>
+        <Button text="Download" icon="arrow-right" iconPosition="right"/>
     </section>
 </div>
 
