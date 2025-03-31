@@ -8,7 +8,7 @@ import Button from "./Button.astro";
         <p>Free, open-source utility client for Minecraft: Bedrock Edition</p>
     </section>
     <section>
-        <Button text="Download" icon="arrow-right" iconPosition="right"/>
+        <Button text="Download" icon="arrow-right" iconPosition="right" />
     </section>
     <section class="flex flex-col gap-2">
         <h2 class="text-2xl font-bold">Links</h2>
@@ -30,6 +30,11 @@ import Button from "./Button.astro";
         position: relative;
         bottom: 0;
         padding: 6rem;
+    }
+
+    .selaura-footer button {
+        background-color: var(--selaura-light);
+        color: var(--selaura-dark);
     }
 
     .footer-title {

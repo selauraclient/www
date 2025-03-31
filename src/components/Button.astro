@@ -15,34 +15,36 @@ interface Props {
 const props = Astro.props;
 ---
 
-{props.href ? (
-    <a
-        href={props.href}
-        target={props.target}
-        class={`selaura-button ${props.muted ? "selaura-button-muted" : ""} ${props.outline ? "selaura-button-outline" : ""}`}
-    >
-        {props.icon && props.iconPosition === "left" && (
-            <i class={`fa-solid fa-${props.icon}`}></i>
-        )}
-        {props.text}
-        {props.icon && props.iconPosition === "right" && (
-            <i class={`fa-solid fa-${props.icon}`}></i>
-        )}
-    </a>
-) : (
-    <button
-        class={`selaura-button ${props.muted ? "selaura-button-muted" : ""} ${props.outline ? "selaura-button-outline" : ""}`}
-        disabled={props.disabled}
-    >
-        {props.icon && props.iconPosition === "left" && (
-            <i class={`fa-solid fa-${props.icon}`}></i>
-        )}
-        {props.text}
-        {props.icon && props.iconPosition === "right" && (
-            <i class={`fa-solid fa-${props.icon}`}></i>
-        )}
-    </button>
-)}
+{
+    props.href ? (
+        <a href={props.href} target={props.target}>
+            <button
+                class={`selaura-button ${props.muted ? "selaura-button-muted" : ""} ${props.outline ? "selaura-button-outline" : ""}`}
+            >
+                {props.icon && props.iconPosition === "left" && (
+                    <i class={`fa-solid fa-${props.icon}`} />
+                )}
+                {props.text}
+                {props.icon && props.iconPosition === "right" && (
+                    <i class={`fa-solid fa-${props.icon}`} />
+                )}
+            </button>
+        </a>
+    ) : (
+        <button
+            class={`selaura-button ${props.muted ? "selaura-button-muted" : ""} ${props.outline ? "selaura-button-outline" : ""}`}
+            disabled={props.disabled}
+        >
+            {props.icon && props.iconPosition === "left" && (
+                <i class={`fa-solid fa-${props.icon}`} />
+            )}
+            {props.text}
+            {props.icon && props.iconPosition === "right" && (
+                <i class={`fa-solid fa-${props.icon}`} />
+            )}
+        </button>
+    )
+}
 
 <style>
     .selaura-button {
