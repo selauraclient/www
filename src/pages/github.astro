@@ -1,0 +1,17 @@
+---
+import Layout from "../layouts/Layout.astro";
+import Button from "../components/Button.astro";
+---
+
+<Layout title="Redirecting..." redirect="https://github.com/selauraclient">
+    <section class="flex flex-col items-center w-full gap-4">
+        <p class="text-4xl text-bold">Redirecting...</p>
+        <p class="text-md text-center max-w-3xl">
+            You are being redirected to our Github account. If you are not
+            redirected, please click the button below.
+        </p>
+        <div class="flex flex-row gap-4">
+            <Button text="View our Github" icon="arrow-right" iconPosition="right" href="https://github.com/selauraclient" />
+        </div>
+    </section>
+</Layout>
