@@ -6,6 +6,5 @@ export default defineConfig({
     vite: {
         plugins: [tailwindcss()],
     },
-    site: 'https://selauraclient.github.io',
-    base: 'www',
+    site: 'https://selauraclient.github.io'
 });
