@@ -1,0 +1,16 @@
+---
+import Layout from "../layouts/Layout.astro";
+import Button from "../components/Button.astro";
+---
+
+<Layout title="404 Not Found">
+    <section class="flex flex-col items-center w-full gap-4">
+        <p class="text-4xl text-bold">404</p>
+        <p class="text-md text-center max-w-3xl">
+            Oops! It seems like the page you are looking for does not exist or has been moved. Please check the URL or return to the homepage.
+        </p>
+        <div class="flex flex-row gap-4">
+            <Button text="Go to home" icon="arrow-right" iconPosition="right" href="/" />
+        </div>
+    </section>
+</Layout>
