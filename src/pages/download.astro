@@ -13,33 +13,45 @@ import Sticker from "../components/Sticker.astro"
         </p>
         <br/>
         <Container>
-            <div class="flex gap-4 flex-row justify-between">
+            <div class="flex flex-col sm:flex-row gap-4 justify-between">
                 <div class="flex flex-row gap-2 items-center">
                     <i class="fa-brands fa-windows text-xl"></i>
-                    <p class="text-xl text-bold">Windows 10/11 (64-bit)</p>
-                    <Sticker type="alpha"></Sticker>
+                    <p class="text-xl font-bold">Windows 10/11 (64-bit)</p>
+                    <Sticker type="alpha" />
                 </div>
-                <Button text="Download" href="https://cdn.selauraclient.com/windows/Selaura.dll"></Button>
+                <Button
+                    text="Download"
+                    href="https://cdn.selauraclient.com/windows/Selaura.dll"
+                    class="w-full sm:w-auto"
+                />
             </div>
         </Container>
         <Container>
-            <div class="flex gap-4 flex-row justify-between">
+            <div class="flex flex-col sm:flex-row gap-4 justify-between">
                 <div class="flex flex-row gap-2 items-center">
                     <i class="fa-brands fa-android text-xl"></i>
-                    <p class="text-xl text-bold">Android 7+ (ARM64)</p>
-                    <Sticker type="alpha"></Sticker>
+                    <p class="text-xl font-bold">Android 7+ (ARM64)</p>
+                    <Sticker type="alpha" />
                 </div>
-                <Button text="Download" href="https://cdn.selauraclient.com/android/libSelaura.so"></Button>
+                <Button
+                    text="Download"
+                    href="https://cdn.selauraclient.com/android/libSelaura.so"
+                    class="w-full sm:w-auto"
+                />
             </div>
         </Container>
         <Container>
-            <div class="flex gap-4 flex-row justify-between">
+            <div class="flex flex-col sm:flex-row gap-4 justify-between">
                 <div class="flex flex-row gap-2 items-center">
                     <i class="fa-brands fa-linux text-xl"></i>
-                    <p class="text-xl text-bold">Linux (mcpelauncher-linux)</p>
-                    <Sticker type="alpha"></Sticker>
+                    <p class="text-xl font-bold">Linux (mcpelauncher-linux)</p>
+                    <Sticker type="alpha" />
                 </div>
-                <Button text="Download" href="https://cdn.selauraclient.com/linux/libSelaura.so"></Button>
+                <Button
+                    text="Download"
+                    href="https://cdn.selauraclient.com/linux/libSelaura.so"
+                    class="w-full sm:w-auto"
+                />
             </div>
         </Container>
         <div class="h-10"></div>

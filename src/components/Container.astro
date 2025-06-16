@@ -3,6 +3,7 @@ import "../styles/global.css";
 
 interface Props {
     border?: boolean;
+    class?: string;
 }
 
 const props = Astro.props;
@@ -10,11 +11,13 @@ const props = Astro.props;
 
 <div
     class={`selaura-container 
-        ${props.border ? "selaura-container-bordered" : ""}`
+        ${props.border ? "selaura-container-bordered" : ""} 
+        ${props.class ?? ""}`
     }
 >
     <slot />
 </div>
+
 
 <style>
     .selaura-container {

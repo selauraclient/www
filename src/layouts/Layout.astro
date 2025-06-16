@@ -60,7 +60,7 @@ import Footer from "../components/Footer.astro";
     </head>
     <body class="flex flex-col min-h-screen w-full">
         <Navbar />
-        <main class="flex flex-col flex-grow items-center selaura-main-content gap-20">
+        <main class="flex flex-col w-full flex-grow items-center selaura-main-content gap-20">
             <slot />
         </main>
         <Footer />
@@ -96,7 +96,6 @@ import Footer from "../components/Footer.astro";
         scroll-behavior: smooth;
         background: var(--selaura-light);
         color: var(--selaura-dark);
-        width: 100%;
         height: 100vh;
         scrollbar-color: var(--selaura-scrollbar-thumb)
             var(--selaura-scrollbar-bg);
@@ -104,6 +103,7 @@ import Footer from "../components/Footer.astro";
 
     body,
     body > * {
+        width: 100%;
         font-optical-sizing: auto;
         font-style: normal;
         font-weight: 500;
