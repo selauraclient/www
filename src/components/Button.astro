@@ -1,5 +1,6 @@
 ---
 import "../styles/global.css";
+import Sticker from "./Sticker.astro";
 
 interface Props {
     text: string;
@@ -9,6 +10,7 @@ interface Props {
     outline?: boolean;
     disabled?: boolean;
     icon?: string;
+    sticker?: "alpha" | "beta" | "release";
     iconPosition?: "left" | "right";
     footer?: boolean;
 }
@@ -29,6 +31,9 @@ const props = Astro.props;
                 {props.icon && props.iconPosition === "right" && (
                     <i class={`fa-solid fa-${props.icon}`} />
                 )}
+                {props.sticker && (
+                    <Sticker type={props.sticker}></Sticker>
+                )}
             </button>
         </a>
     ) : (
@@ -42,6 +47,9 @@ const props = Astro.props;
             {props.text}
             {props.icon && props.iconPosition === "right" && (
                 <i class={`fa-solid fa-${props.icon}`} />
+            )}
+            {props.sticker && (
+                <Sticker type={props.sticker}></Sticker>
             )}
         </button>
     )

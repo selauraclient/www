@@ -1,0 +1,33 @@
+---
+import "../styles/global.css";
+
+interface Props {
+    border?: boolean;
+}
+
+const props = Astro.props;
+---
+
+<div
+    class={`selaura-container 
+        ${props.border ? "selaura-container-bordered" : ""}`
+    }
+>
+    <slot />
+</div>
+
+<style>
+    .selaura-container {
+        width: 100%;
+        box-sizing: border-box;
+        background-color: var(--selaura-soft);
+        color: var(--selaura-dark);
+        padding: 1.5rem;
+        border-radius: 0.75rem;
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    }
+
+    .selaura-container-bordered {
+        border: 2px solid var(--selaura-dark);
+    }
+</style>

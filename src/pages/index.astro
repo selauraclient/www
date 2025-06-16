@@ -13,8 +13,20 @@ import Button from "../components/Button.astro";
 			providing a smooth and enjoyable gaming experience.
 		</p>
 		<div class="flex flex-row gap-4">
-			<Button text="Why us?" icon="arrow-right" iconPosition="right" />
-			<Button text="Features" outline />
+			<Button text="Try it Now" href="/download.html" />
+			<Button text="Donate" icon="arrow-right" iconPosition="right" outline href="https://ko-fi.com/selauraclient" target="_blank" />
+		</div>
+		<br/>
+		<div class="flex flex-row gap-4">
+			<a href="/github/" target="_blank">
+				<i class="fa-brands fa-github text-lg" />
+			</a>
+			<a href="/discord/" target="_blank">
+				<i class="fa-brands fa-discord text-lg" />
+			</a>
+			<a href="/youtube/" target="_blank">
+				<i class="fa-brands fa-youtube text-lg" />
+			</a>
 		</div>
 		<div></div>
 		<span
@@ -34,5 +46,8 @@ import Button from "../components/Button.astro";
 				/>
 			</video>
 		</span>
+	</section>
+	<section class="flex flex-col items-center w-full gap-4">
+		
 	</section>
 </Layout>

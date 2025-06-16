@@ -1,0 +1,55 @@
+---
+import Layout from "../layouts/Layout.astro";
+import Button from "../components/Button.astro";
+import Container from "../components/Container.astro";
+import Sticker from "../components/Sticker.astro"
+---
+
+<Layout title="Downloads">
+    <section class="flex flex-col w-full gap-4">
+        <p class="text-4xl text-bold">Downloads</p>
+        <p class="text-md max-w-3xl">
+            Here you can download Selaura Client, from our locally provided CDN's below.
+        </p>
+        <br/>
+        <Container>
+            <div class="flex gap-4 flex-row justify-between">
+                <div class="flex flex-row gap-2 items-center">
+                    <i class="fa-brands fa-windows text-xl"></i>
+                    <p class="text-xl text-bold">Windows 10/11 (x64 bit)</p>
+                    <Sticker type="alpha"></Sticker>
+                </div>
+                <Button text="Download" href="https://cdn.selauraclient.com/windows/Selaura.dll"></Button>
+            </div>
+        </Container>
+        <Container>
+            <div class="flex gap-4 flex-row justify-between">
+                <div class="flex flex-row gap-2 items-center">
+                    <i class="fa-brands fa-android text-xl"></i>
+                    <p class="text-xl text-bold">Android 7+ (ARM64)</p>
+                    <Sticker type="alpha"></Sticker>
+                </div>
+                <Button text="Download" href="https://cdn.selauraclient.com/android/libSelaura.so"></Button>
+            </div>
+        </Container>
+        <Container>
+            <div class="flex gap-4 flex-row justify-between">
+                <div class="flex flex-row gap-2 items-center">
+                    <i class="fa-brands fa-linux text-xl"></i>
+                    <p class="text-xl text-bold">Linux (mcpelauncher-linux)</p>
+                    <Sticker type="alpha"></Sticker>
+                </div>
+                <Button text="Download" href="https://cdn.selauraclient.com/linux/libSelaura.so"></Button>
+            </div>
+        </Container>
+        <div class="h-10"></div>
+        <p class="text-4xl text-bold">Additional Resources</p>
+        <p class="text-md max-w-3xl">
+            Look at these for extra resources, or direct downloads to binaries for Selaura Client.
+        </p>
+        <div class="flex flex-row gap-4">
+            <Button text="Source Code" icon="notes" iconPosition="left" href="/github/" target="_blank" />
+            <Button text="Scripting Documentation" icon="external-link" iconPosition="left" href="https://docs.selauraclient.com" target="_blank" />
+        </div>
+    </section>
+</Layout>
